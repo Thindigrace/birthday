@@ -84,6 +84,22 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+}/* Force navbar links to stay in one line on small screens */
+@media (max-width: 600px) {
+    .navbar {
+        display: flex;           /* horizontal row */
+        flex-wrap: nowrap;       /* don’t wrap to new line */
+        overflow-x: auto;        /* scroll if it’s too wide */
+        justify-content: center; /* center links */
+        padding: 10px;           /* shrink padding */
+    }
+    .navbar a {
+        flex: 0 0 auto;          /* prevent links from shrinking too much */
+        font-size: 16px;         /* smaller text */
+        padding: 6px 8px;        /* smaller spacing inside links */
+        margin: 0 3px;           /* smaller gap between links */
+        white-space: nowrap;     /* prevent line breaks inside text */
+    }
 }
     </style>
 </head>
