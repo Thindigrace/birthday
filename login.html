@@ -59,26 +59,46 @@
             margin-top: 30px;
             font-size:24px ;
         }
-       /* Mobile-friendly calendar */
+       /* Calendar base styles */
+.calender {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 days per row */
+    gap: 5px;
+    max-width: 400px;       /* optional, center calendar */
+    margin: 20px auto;
+}
+
+.day {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff69b4;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Hover effect */
+.day:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile adjustments */
 @media (max-width: 600px) {
-    .calendar {
-        width: 100%;           /* full width */
-        display: flex;
-        flex-wrap: wrap;       /* allow days to wrap naturally */
-        justify-content: center;
-        padding: 0 5px;        /* small padding on sides */
+    .calender {                     /* changed from .calendar to .calender */
+        grid-template-columns: repeat(7, 1fr); /* still 7 per row, scales down */
+        max-width: 100%;                     /* full width of screen */
+        padding: 0 5px;
         box-sizing: border-box;
     }
     .day {
-        flex: 1 1 14%;         /* each day ~1/7 of row, adjusts automatically */
-        min-width: 30px;       /* ensures buttons don’t get too tiny */
-        max-width: 40px;       /* optional: keeps buttons reasonable */
         padding: 6px;
-        margin: 3px;
-        font-size: 14px;
+        font-size: 12px;
+        min-width: 20px;  /* prevent buttons from disappearing */
         box-sizing: border-box;
     }
-} 
+}
     </style>
 </head>
 <body>
