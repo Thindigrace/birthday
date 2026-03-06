@@ -105,6 +105,38 @@ footer{
     position: fixed;
     bottom: 0;
     width: 100%;
+}@media (max-width: 600px) {
+    /* Navbar adjustments */
+    .navbar {
+        display: flex;
+        flex-wrap: nowrap;       /* keep all links on one line */
+        overflow-x: auto;        /* scroll if needed */
+        justify-content: center; /* center links */
+    }
+    .navbar a {
+        flex: 0 0 auto;          /* prevent links from shrinking too much */
+        font-size: 16px; 
+        padding: 6px 10px; 
+        margin: 0 5px;
+    }
+
+    /* Headings and text */
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    p { font-size: 14px; }
+
+    /* Photos / gallery */
+    .photo { width: 150px; padding: 5px; }
+
+    /* Hearts animation */
+    .heart { font-size: 18px; animation-duration: 4s; }
+
+    /* Buttons */
+    .btn { font-size: 16px; padding: 10px 20px; }
+
+    /* Calendar adjustments */
+    .calendar { width: 100%; font-size: 12px; }
+    .day { padding: 8px; font-size: 14px; min-width: 20px; }
 }
     </style>
 </head>
