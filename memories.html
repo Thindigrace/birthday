@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memories</title>
+    <style>
+        body{
+            background: linear-gradient(to bottom,#ffe6f2,#ffffff);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+/* navbar section */
+.navbar{
+    background-color: #ff696b;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.navbar a {
+    color:white ;
+    padding:8px 15px ;
+    margin:0 15px ;
+    text-decoration:none ;
+    font-size: 24px;
+    border-radius:8px ;
+    transition:background 0.3s,transform 0.2s;
+}
+.navbar a:hover{
+    background-color: #ff1493;
+    transform: scale(1.1);
+} 
+.musicplayer{
+    margin-top: 20px;
+}
+.musicplayer audio{
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+h1{
+    margin-top:50px ;
+    color: #ff1493;
+}
+h2{
+    text-align: center;
+    color: #ff1493;
+    margin-top: 30px;
+    font-size: 36px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+p{
+    text-align: center;
+    color: #ff69b4;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.memories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+.photo{
+    position: relative;
+    width: 200px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: transform 0.3s,box-shadow 0.3s;
+}
+.photo img{
+    width: 100%;
+    border-radius: 5px;
+}
+.photo:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+#lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.8) ;
+    display:none ;
+    justify-content: center;
+    z-index: 999;
+
+}
+#lightbox img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+@keyframes float{
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh); 
+        opacity:0 ;
+
+    }
+}
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 24px;
+    animation: float 6s linear infinite;
+}
+footer{
+    background-color: #ff694b;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 16px;
+    text-align: center;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="memories.html">memories</a>
+        <a href="welcomepage.html">welcomepage</a>
+        <a href="birthdaymessage.html">birthdaymessage</a>
+        <!-- <a href=""></a> -->
+    </nav>
+    <h1>some cute memories here </h1>
+    <h2>your beautiful memories</h2>
+    <p>hope that every pic tells a story of your happiest moment</p>
+    <div class="memories">
+    <div class="photo"><img src="static/WhatsApp Image 2026-03-04 at 16.04.29.jpeg" alt="mem1"></div>
+    <div class="photo" ><img src="static/WhatsApp Image 2026-03-04 at 16.04.36.jpeg" alt="mem2"></div>
+    <div class="photo" ><img src="static/WhatsApp Image 2026-03-04 at 16.06.31.jpeg" alt="mem3"></div>
+    <!-- <div class="photo" ><img src="static/WhatsApp Image 2026-03-04 at 16.06.31.jpeg" alt="mem4"></div> -->
+    <div class="photo" ><img src="static/WhatsApp Image 2026-03-04 at 16.07.13.jpeg" alt="mem5"></div>
+    <div class="photo" ><img src="static/WhatsApp Image 2026-03-04 at 17.57.16.jpeg" alt="mem6"></div>
+    </div>
+    <div>
+        <!-- light box -->
+         <div id="lightbox">
+            <img src="" >
+         </div>
+    </div>
+    <div class="heart" style="left: 10%;">❤️</div>
+    <div class="heart" style="left:30% ; animation-duration:8s ;">💖</div>
+    <div class="heart" style="left: 50%; animation-duration:7s ;">💖</div>
+    <div class="heart" style="left:70% ; animation-duration:9s ;">💕</div>
+    <div class="heart" style="left: 90%; animation-duration:6s ;">💕</div>
+    <div class="musicplayer">
+    <audio controls >
+        <source src="static/saavane-happy-birthday-254480.mp3" type="audio/mpeg">
+
+    </audio>
+    </div>
+    <script>
+        // get all images
+        const photos = document.querySelectorAll(".photo img");
+        const lightbox=document.getElementById("lightbox");
+        const lightboxImg=lightbox.querySelector("img");
+
+        // click to open
+        photos.forEach(photo=>{
+            photo.addEventListener("click",()=>{
+                lightbox.style.display="flex";
+                lightboxImg.src=photo.src;
+            });
+        });
+// click outside to close
+lightbox.addEventListener("click",()=>{
+    lightbox.style.display="none";
+});
+
+
+    </script>
+    <footer class="footer">
+        <p>&copy;2026 grace thindi.All rights reserved. </p>
+    </footer>
+</body>
+</html>

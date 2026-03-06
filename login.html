@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+   <style>
+        body{
+        font-family:Arial,sans-serif;
+        text-align:center;
+        background:linear-gradient(to right, pink,purple);
+        color:white;
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 48px;
+            text-align: center;
+            color: #ff1493;
+            margin-top: 80px;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+        }
+        h2{
+            margin-top:40px;
+        }
+        .run{
+            position: absolute;
+            top:10px ;
+            left:100% ;
+            white-space: nowrap;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff69bf;
+            animation: moveText 10s linear infinite;
+        }
+        @keyframes moveText{
+            0% {left: 100%;}         
+            100% {left: -100%;}
+        }
+       .calender{
+        display:grid;
+        grid-template-columns:repeat(7,60px);
+        gap:60px;
+        justify-content:center;
+        margin-top:30px;
+        }
+        .day{
+           background: #ff69bf; 
+           border: none;
+           border-radius: 10px;
+           padding: 15px;
+           cursor: pointer;
+           font-weight:bold ;
+           transition: transform 0.2s;
+        }
+        .day:hover{
+           transform: scale(1.2); 
+           }
+        #message{
+            margin-top: 30px;
+            font-size:24px ;
+        }
+            
+    </style>
+</head>
+<body>
+<div class="run">happy birthday jeremy !!!!
+</div>
+<h1>my aprile babe</h1>
+<h2>pick ur special day</h2>
+<div class="calender" id="calender">
+ </div>
+<div id="message"></div>
+<script>
+const birthday = 4;
+const calenderDiv=document.getElementById("calender");
+const messageDiv=document.getElementById("message");
+//create 30 days of aprile
+for(let i=1;i<=30; i++){
+   const btn =document.createElement("button");
+   btn.innerText=i;
+   btn.classList.add("day");
+  btn.addEventListener("click",()=>{
+ if(i===birthday){
+   messageDiv.innerHTML="Access granted!happy birthday " 
+   //waits 2 seconds then redirects
+   setTimeout(function(){
+    window.location.href="welcomepage.html";
+   },2000);
+ } else{
+    messageDiv.innerHTML="oops pliz try again"
+ }
+ });
+ calenderDiv.appendChild(btn);
+}
+</script>
+
+    
+</body>
+</html>

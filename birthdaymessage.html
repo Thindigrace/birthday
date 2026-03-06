@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>birthdaymessage.html</title>
+    <style>
+        
+/* navbar section */
+.navbar{
+    background-color: #ff696b;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.navbar a {
+    color:white ;
+    padding:8px 15px ;
+    margin:0 15px ;
+    text-decoration:none ;
+    font-size: 24px;
+    border-radius:8px ;
+    transition:background 0.3s,transform 0.2s;
+}
+.navbar a:hover{
+    background-color: #ff1493;
+    transform: scale(1.1);
+}
+/* gradient text animation */
+@keyframes rainbowText{
+    0% { background-position: 0% 50%;}
+    50% { background-position: 100% 50%;}
+    100% { background-position: 0% 50%;}
+}
+.poembox{
+    position: relative;
+    background-color: white;
+    width: 75%;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    font-size: 28px;
+    line-height: 1.8;font-weight: bold;
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(90deg,#ff1493,#ff69b4,#ffb6c1,#ff1493);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: rainbowText 5s ease infinite;
+    transition:transform 0.3s ;
+    overflow: hidden;
+    
+}
+/* hover effect */
+.poembox:hover{
+    transform: scale(1.08);
+}
+/* .poembox::after {
+    content: '✨';
+    position: absolute;
+    font-size: 34px;
+    animation: sparkle 2s infinite linear;
+    top: 0;
+    left: 50%;
+    animation: sparkle 2s infinite linear;
+} */
+/* @keyframes sparkle {
+    0%{ transform: translate(-50%,0) rotate(0deg);opacity: 1;}
+    50%{transform: translate(50px,-50px) rotate(180deg); opacity: 0.5;}
+    100%{transform: translate(-50%,0) rotate(360deg);opacity: 1;}
+} */
+.footer{
+    background-color: #ff694b;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 16px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+  <nav class="navbar">
+        <a href="memories.html">memories</a>
+        <a href="welcomepage.html">welcomepage</a>
+        <a href="birthdaymessage.html">birthdaymessage</a>
+        <!-- <a href=""></a> -->
+    </nav>
+    <div class="poembox">
+        <p>
+            roses are pink,violets are bright,<br>
+            today's your day,your heart's delight,<br>
+            laughter and joy,love that's true,<br>
+            happy birthday,just for you!
+        </p>
+
+    </div>
+    <footer class="footer">
+        <p>&copy;2026 grace thindi.All rights reserved. </p>
+    </footer>
+   
+    
+</body>
+</html>
