@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <style>
+     body {
+        background: linear-gradient(to bottom, #ffe6f2, #ffffff);
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    main {
+        flex: 1; /* makes content take up available space so footer stays at bottom */
+    }
+
+    h1 {
+        margin-top: 80px;
+        color: #ff1493;
+        font-size: 48px;
+    }
+
+    p {
+        color: #ff69b4;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        background: #ff69b4;
+        color: white;
+        font-size: 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.3s;
+        margin-top: 40px;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+        background: #ff1493;
+    }
+
+    footer {
+        background-color: #ff694b;
+        color: white;
+        padding: 20px 0;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 40px;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Welcome to Your Special Day!</h1>
+        <p>Shh… a magical birthday surprise awaits. Are you ready? ✨</p>
+        <button class="btn" onclick="window.location.href='login.html'">Make a Wish 🎂</button>
+    </main>
+    <footer>
+        &copy; 2026 Grace Thindi. All rights reserved.
+    </footer>
+</body>
+</html>
